@@ -1,0 +1,1183 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "119ab5e71324807a",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7331814bfec4c058",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "0543f262072afe10",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true
+    },
+    {
+        "id": "89e58ef6415150d5",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "ce03fe1407402690",
+        "type": "ui-page",
+        "name": "Page 1",
+        "ui": "0543f262072afe10",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "89e58ef6415150d5",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": 0,
+                "cols": 3
+            },
+            {
+                "name": "Tablet",
+                "px": 576,
+                "cols": 6
+            },
+            {
+                "name": "Small Desktop",
+                "px": 768,
+                "cols": 9
+            },
+            {
+                "name": "Desktop",
+                "px": 1024,
+                "cols": 12
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "2142fbd8c491c5d4",
+        "type": "ui-group",
+        "name": "Group 1",
+        "page": "ce03fe1407402690",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": true,
+        "disabled": false,
+        "groupType": "default"
+    },
+    {
+        "id": "a53721feb16e840d",
+        "type": "OpcUa-Endpoint2",
+        "name": "",
+        "endpoint": "opc.tcp://192.168.0.113:4841",
+        "securityMode": "None",
+        "securityPolicy": "None",
+        "userIdentityType": "Anonymous",
+        "pkiName": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "subscriptions": [
+            {
+                "id": "s0",
+                "name": "Default Subscription",
+                "isDefault": true,
+                "parameters": {
+                    "publishingEnabled": true,
+                    "requestedLifetimeCount": "1000",
+                    "requestedMaxKeepAliveCount": "10",
+                    "requestedPublishingInterval": "1000",
+                    "maxNotificationsPerPublish": "0",
+                    "priority": "100"
+                }
+            },
+            {
+                "id": "s1",
+                "name": "Slow Subscription",
+                "isDefault": true,
+                "parameters": {
+                    "publishingEnabled": true,
+                    "requestedLifetimeCount": "100",
+                    "requestedMaxKeepAliveCount": "3",
+                    "requestedPublishingInterval": "5000",
+                    "maxNotificationsPerPublish": "100",
+                    "priority": "10"
+                }
+            },
+            {
+                "id": "s2",
+                "name": "Fast Subscription",
+                "isDefault": true,
+                "parameters": {
+                    "publishingEnabled": true,
+                    "requestedLifetimeCount": "4000",
+                    "requestedMaxKeepAliveCount": "50",
+                    "requestedPublishingInterval": "250",
+                    "maxNotificationsPerPublish": "100",
+                    "priority": "200"
+                }
+            }
+        ],
+        "namespaceAliases": [
+            {
+                "namespaceUri": "http://opcfoundation.org/UA/",
+                "alias": "ua"
+            },
+            {
+                "namespaceUri": "http://opcfoundation.org/DI/",
+                "alias": "di"
+            }
+        ]
+    },
+    {
+        "id": "e4c625e9a51968fe",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://192.168.33.164:4842",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "61c9f57b85828ad8",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.47.164",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "e869a1878d373a70",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://192.168.229.164:4841",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "770729fcacec3301",
+        "type": "OpcUa-Endpoint2",
+        "name": "",
+        "endpoint": "opc.tcp://192.168.193.164:4841",
+        "securityMode": "None",
+        "securityPolicy": "None",
+        "userIdentityType": "Anonymous",
+        "pkiName": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "subscriptions": [
+            {
+                "id": "s0",
+                "name": "Default Subscription",
+                "isDefault": true,
+                "parameters": {
+                    "publishingEnabled": true,
+                    "requestedLifetimeCount": "1000",
+                    "requestedMaxKeepAliveCount": "10",
+                    "requestedPublishingInterval": "1000",
+                    "maxNotificationsPerPublish": "0",
+                    "priority": "100"
+                }
+            },
+            {
+                "id": "s1",
+                "name": "Slow Subscription",
+                "isDefault": true,
+                "parameters": {
+                    "publishingEnabled": true,
+                    "requestedLifetimeCount": "100",
+                    "requestedMaxKeepAliveCount": "3",
+                    "requestedPublishingInterval": "5000",
+                    "maxNotificationsPerPublish": "100",
+                    "priority": "10"
+                }
+            },
+            {
+                "id": "s2",
+                "name": "Fast Subscription",
+                "isDefault": true,
+                "parameters": {
+                    "publishingEnabled": true,
+                    "requestedLifetimeCount": "4000",
+                    "requestedMaxKeepAliveCount": "50",
+                    "requestedPublishingInterval": "250",
+                    "maxNotificationsPerPublish": "100",
+                    "priority": "200"
+                }
+            }
+        ],
+        "namespaceAliases": [
+            {
+                "namespaceUri": "http://opcfoundation.org/UA/",
+                "alias": "ua"
+            },
+            {
+                "namespaceUri": "http://opcfoundation.org/DI/",
+                "alias": "di"
+            }
+        ]
+    },
+    {
+        "id": "c5239d28f6e0b283",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mosquitto",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "97b3735a75d7e7d5",
+        "type": "mqtt-sparkplug-broker",
+        "name": "",
+        "deviceGroup": "",
+        "eonName": "",
+        "broker": "mosquitto",
+        "port": 1883,
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "enableStoreForward": false,
+        "compressAlgorithm": "",
+        "aliasMetrics": false,
+        "useTemplates": true,
+        "manualEoNBirth": false,
+        "primaryScada": ""
+    },
+    {
+        "id": "6f8333c80344619a",
+        "type": "OpcUa-Endpoint2",
+        "name": "",
+        "endpoint": "opc.tcp://opcuademo.sterfive.com:26543/UA/SampleServer",
+        "securityMode": "None",
+        "securityPolicy": "None",
+        "userIdentityType": "Anonymous",
+        "pkiName": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "subscriptions": [
+            {
+                "id": "s0",
+                "name": "Default Subscription",
+                "isDefault": true,
+                "parameters": {
+                    "publishingEnabled": true,
+                    "requestedLifetimeCount": "1000",
+                    "requestedMaxKeepAliveCount": "10",
+                    "requestedPublishingInterval": "1000",
+                    "maxNotificationsPerPublish": "0",
+                    "priority": "100"
+                }
+            },
+            {
+                "id": "s1",
+                "name": "Slow Subscription",
+                "isDefault": true,
+                "parameters": {
+                    "publishingEnabled": true,
+                    "requestedLifetimeCount": "100",
+                    "requestedMaxKeepAliveCount": "3",
+                    "requestedPublishingInterval": "5000",
+                    "maxNotificationsPerPublish": "100",
+                    "priority": "10"
+                }
+            },
+            {
+                "id": "s2",
+                "name": "Fast Subscription",
+                "isDefault": true,
+                "parameters": {
+                    "publishingEnabled": true,
+                    "requestedLifetimeCount": "4000",
+                    "requestedMaxKeepAliveCount": "50",
+                    "requestedPublishingInterval": "250",
+                    "maxNotificationsPerPublish": "100",
+                    "priority": "200"
+                }
+            }
+        ],
+        "namespaceAliases": [
+            {
+                "namespaceUri": "http://opcfoundation.org/UA/",
+                "alias": "ua"
+            },
+            {
+                "namespaceUri": "http://opcfoundation.org/DI/",
+                "alias": "di"
+            }
+        ]
+    },
+    {
+        "id": "fe594665aba43064",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://localhost:53880/UA/Simple",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "939d6eb422665938",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "raspberrypi.local",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "37cbb5db176f5a3c",
+        "type": "postgreSQLConfig",
+        "name": "",
+        "host": "postgres",
+        "hostFieldType": "str",
+        "port": 5432,
+        "portFieldType": "num",
+        "database": "SCADA",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": 10,
+        "maxFieldType": "num",
+        "idle": 1000,
+        "idleFieldType": "num",
+        "connectionTimeout": 10000,
+        "connectionTimeoutFieldType": "num",
+        "user": "keycloak",
+        "userFieldType": "str",
+        "password": "keycloakpassword",
+        "passwordFieldType": "str"
+    },
+    {
+        "id": "f01e04f735a9e571",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://192.168.0.109:4096",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "3cc11d24.ff01a2",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "WARNING: please check you have started this container with a volume that is mounted to /data\\n otherwise any flow changes are lost when you redeploy or upgrade the container\\n (e.g. upgrade to a more recent node-red docker image).\\n  If you are using named volumes you can ignore this warning.\\n Double click or see info side panel to learn how to start Node-RED in Docker to save your work",
+        "info": "\nTo start docker with a bind mount volume (-v option), for example:\n\n```\ndocker run -it -p 1880:1880 -v /home/user/node_red_data:/data --name mynodered nodered/node-red\n```\n\nwhere `/home/user/node_red_data` is a directory on your host machine where you want to store your flows.\n\nIf you do not do this then you can experiment and redploy flows, but if you restart or upgrade the container the flows will be disconnected and lost. \n\nThey will still exist in a hidden data volume, which can be recovered using standard docker techniques, but that is much more complex than just starting with a named volume as described above.",
+        "x": 350,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "c2f86509caf643f6",
+        "type": "postgresql",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "query": "SELECT * FROM target_actual;",
+        "postgreSQLConfig": "37cbb5db176f5a3c",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 390,
+        "y": 440,
+        "wires": [
+            [
+                "48f0b38e74b1c297"
+            ]
+        ]
+    },
+    {
+        "id": "48f0b38e74b1c297",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "8abb21732ff454a6",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 420,
+        "wires": [
+            [
+                "c2f86509caf643f6"
+            ]
+        ]
+    },
+    {
+        "id": "be6eaf77fb016e3f",
+        "type": "OpcUa-Client",
+        "z": "f6f2187d.f17ca8",
+        "endpoint": "f01e04f735a9e571",
+        "action": "browse",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "setstatusandtime": false,
+        "keepsessionalive": false,
+        "name": "",
+        "x": 380,
+        "y": 540,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "23cd26037db203cf",
+        "type": "OpcUa-Client",
+        "z": "119ab5e71324807a",
+        "endpoint": "e4c625e9a51968fe",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "setstatusandtime": false,
+        "keepsessionalive": false,
+        "name": "",
+        "x": 440,
+        "y": 200,
+        "wires": [
+            [],
+            [
+                "3c193000d64c6912"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "63e76b445dacf49f",
+        "type": "debug",
+        "z": "119ab5e71324807a",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "fc30a603a164d31d",
+        "type": "inject",
+        "z": "119ab5e71324807a",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "iso",
+        "payloadType": "date",
+        "x": 200,
+        "y": 200,
+        "wires": [
+            [
+                "23cd26037db203cf",
+                "82d24b5f58b1b82d",
+                "a49418eb0af7b2e9"
+            ]
+        ]
+    },
+    {
+        "id": "3c193000d64c6912",
+        "type": "OpcUa-Browser",
+        "z": "119ab5e71324807a",
+        "endpoint": "e4c625e9a51968fe",
+        "item": "",
+        "datatype": "",
+        "topic": "ns=4;s=Address Space.Dev00",
+        "items": [],
+        "name": "",
+        "x": 670,
+        "y": 260,
+        "wires": [
+            [
+                "63e76b445dacf49f"
+            ]
+        ]
+    },
+    {
+        "id": "82d24b5f58b1b82d",
+        "type": "mqtt out",
+        "z": "119ab5e71324807a",
+        "name": "",
+        "topic": "/test/msg",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "61c9f57b85828ad8",
+        "x": 900,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "d399a51e433bb3dc",
+        "type": "mqtt in",
+        "z": "119ab5e71324807a",
+        "name": "",
+        "topic": "/test/msg1",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "61c9f57b85828ad8",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 640,
+        "y": 440,
+        "wires": [
+            [
+                "63e76b445dacf49f"
+            ]
+        ]
+    },
+    {
+        "id": "a49418eb0af7b2e9",
+        "type": "mqtt out",
+        "z": "119ab5e71324807a",
+        "name": "",
+        "topic": "/test/msg1",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "61c9f57b85828ad8",
+        "x": 910,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "b48e264cb08a302d",
+        "type": "inject",
+        "z": "7331814bfec4c058",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "ns=4;s=Address Space.Dev00.DataTags.Line1.Mach1.Lid1_Raw_Sen",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "fda50c510daee149",
+                "ec82869813b331cf"
+            ]
+        ]
+    },
+    {
+        "id": "fda50c510daee149",
+        "type": "OpcUa-Client2-Read",
+        "z": "7331814bfec4c058",
+        "inputs": 1,
+        "output": 4,
+        "name": "Read Counter",
+        "endpoint": "770729fcacec3301",
+        "attributeId": "Value",
+        "nodeId": "ns=4;s=Address Space.Dev00.DataTags.Line1.Mach1.Lid1_Raw_Sen",
+        "outputType": "Value",
+        "x": 430,
+        "y": 240,
+        "wires": [
+            [
+                "1f49c9fe7504b99d",
+                "ed2d1f01ef24b56a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "1f49c9fe7504b99d",
+        "type": "debug",
+        "z": "7331814bfec4c058",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "3ff6e0c918bea3bc",
+        "type": "debug",
+        "z": "7331814bfec4c058",
+        "name": "debug 6",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "49b55e7340b7d3fd",
+        "type": "mqtt out",
+        "z": "7331814bfec4c058",
+        "name": "",
+        "topic": "/test/msg",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "c5239d28f6e0b283",
+        "x": 780,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "ec33796a7589e8a0",
+        "type": "mqtt out",
+        "z": "7331814bfec4c058",
+        "name": "",
+        "topic": "/test/StartPB",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "c5239d28f6e0b283",
+        "x": 570,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "7e31490d0946676b",
+        "type": "inject",
+        "z": "7331814bfec4c058",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "ns=4;s=Address Space.Dev00.Counter",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 270,
+        "y": 40,
+        "wires": [
+            [
+                "ec33796a7589e8a0"
+            ]
+        ]
+    },
+    {
+        "id": "a222cfea4d5ebc93",
+        "type": "OpcUa-Client2-Read",
+        "z": "7331814bfec4c058",
+        "inputs": 1,
+        "output": 4,
+        "name": "Read StopButton",
+        "endpoint": "770729fcacec3301",
+        "attributeId": "Value",
+        "nodeId": "ns=4;s=Address Space.Dev00.StopButton",
+        "outputType": "Value",
+        "x": 140,
+        "y": 140,
+        "wires": [
+            [
+                "3ff6e0c918bea3bc"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b48be28ca63dbbc0",
+        "type": "inject",
+        "z": "7331814bfec4c058",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "ns=4;s=Address Space.Dev00.StopButton",
+        "payload": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 80,
+        "wires": [
+            [
+                "a222cfea4d5ebc93",
+                "94d99a90259e08ee"
+            ]
+        ]
+    },
+    {
+        "id": "d53e54550c0eb77f",
+        "type": "function",
+        "z": "7331814bfec4c058",
+        "name": "function 2",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ec82869813b331cf",
+        "type": "OpcUa-Client2-Browse",
+        "z": "7331814bfec4c058",
+        "d": true,
+        "inputs": 1,
+        "output": 4,
+        "name": "",
+        "endpoint": "770729fcacec3301",
+        "nodeId": "ns=4;s=Address Space.Dev00.Counter",
+        "referenceTypeId": "HasChild",
+        "includeSubtypes": false,
+        "browseDirection": "Forward",
+        "nodeClassMask": "Object | Variable | Method | ObjectType | VariableType | View",
+        "resultMask": "ReferenceType | IsForward | NodeClass | BrowseName | DisplayName | TypeDefinition",
+        "x": 400,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ed2d1f01ef24b56a",
+        "type": "function",
+        "z": "7331814bfec4c058",
+        "name": "function 3",
+        "func": "let prevState = context.get(\"prevState\") || false;\nlet count = context.get(\"count\") || 0;\n\nif (prevState === false && msg.payload === true) {\n    count += 1;\n}\n\ncontext.set(\"prevState\", msg.payload);\ncontext.set(\"count\", count);\n\nmsg.payload = count;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 320,
+        "wires": [
+            [
+                "12e510fde0ea05a9"
+            ]
+        ]
+    },
+    {
+        "id": "12e510fde0ea05a9",
+        "type": "debug",
+        "z": "7331814bfec4c058",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "b272e2768dd4ada1",
+        "type": "mqtt in",
+        "z": "7331814bfec4c058",
+        "d": true,
+        "name": "",
+        "topic": "spBv1.0/Ignition/DDATA/Edge/Device",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "c5239d28f6e0b283",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 590,
+        "y": 420,
+        "wires": [
+            [
+                "12e510fde0ea05a9"
+            ]
+        ]
+    },
+    {
+        "id": "232a301ee0167f37",
+        "type": "mqtt sparkplug in",
+        "z": "7331814bfec4c058",
+        "name": "",
+        "topic": "spBv1.0/Ignition/DDATA/Edge/Device",
+        "qos": "2",
+        "broker": "97b3735a75d7e7d5",
+        "x": 210,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "65b686758f42ed98",
+        "type": "function",
+        "z": "7331814bfec4c058",
+        "name": "function 5",
+        "func": "// Create an empty object to hold individual metrics\nlet metrics = {};\n\n// Loop through all metrics in the payload\nfor (let metric of msg.payload.metrics) {\n    // Store each metric in the metrics object\n    metrics[metric.name] = metric.value;\n}\n\n// Attach the metrics object to msg.payload\nmsg.payload = metrics;\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8f260956a8ca04bb",
+        "type": "mqtt in",
+        "z": "7331814bfec4c058",
+        "name": "",
+        "topic": "/test/msg",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "c5239d28f6e0b283",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 860,
+        "y": 460,
+        "wires": [
+            [
+                "12e510fde0ea05a9"
+            ]
+        ]
+    },
+    {
+        "id": "94d99a90259e08ee",
+        "type": "mqtt out",
+        "z": "7331814bfec4c058",
+        "name": "",
+        "topic": "/test/StartPB",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "939d6eb422665938",
+        "x": 870,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "0c16ad4d2ac0a816",
+        "type": "function",
+        "z": "7331814bfec4c058",
+        "name": "function 4",
+        "func": "let output = {};\n\nfor (let metric of msg.payload.metrics) {\n    output[metric.name] = metric.value;\n}\n\nmsg.payload = output;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 560,
+        "wires": [
+            [
+                "49b55e7340b7d3fd"
+            ]
+        ]
+    },
+    {
+        "id": "b334cf083c4bc51a",
+        "type": "mqtt in",
+        "z": "7331814bfec4c058",
+        "name": "",
+        "topic": "robot/status",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "c5239d28f6e0b283",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1130,
+        "y": 320,
+        "wires": [
+            [
+                "12e510fde0ea05a9"
+            ]
+        ]
+    },
+    {
+        "id": "3484d3be6eb27876",
+        "type": "mqtt sparkplug in",
+        "z": "7331814bfec4c058",
+        "name": "",
+        "topic": "spBv1.0/SCADA/DDATA/RobotArm/ESP32",
+        "qos": "2",
+        "broker": "97b3735a75d7e7d5",
+        "x": 220,
+        "y": 660,
+        "wires": [
+            [
+                "0c16ad4d2ac0a816"
+            ]
+        ]
+    }
+]
